@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package example;
+option go_package = "pcd/proto";
+
+
+// Define the gRPC service
+service CrawlerService {
+  rpc CrawlURL (CrawlRequest) returns (CrawlResponse);
+}
+
+// Request message
+message CrawlRequest {
+  string url = 1;
+}
+
+// Response message
+message CrawlResponse {
+  repeated string urls = 1;
+}
